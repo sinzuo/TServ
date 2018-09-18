@@ -1,0 +1,1 @@
+g++ json.h RedisClient.hpp ClientService.h stdafx.h NetAdapter.h UdpAdapter.h MainServ.h RedisClient.cpp json.cpp ClientService.cpp MainServ.cpp NetAdapter.cpp UdpAdapter.cpp main.cpp -std=c++11 -lpthread -L./ -lhiredis -lmysqlclient -o tserv
