@@ -167,7 +167,7 @@ void ReadConfigFile()
 
 int ConnectDB(MYSQL *lpconn)
 {
-	if(!mysql_real_connect(lpconn,MYSQL_HOST,MYSQL_USER,MYSQL_PASSWD,MYSQL_DB,0,NULL,CLIENT_FOUND_ROWS))
+	if(!mysql_real_connect(lpconn,MYSQL_HOST,MYSQL_USER,MYSQL_PASSWD,MYSQL_DB,4306,NULL,CLIENT_FOUND_ROWS))
 	{
 		MOUTPUT("Can not connect to mysql : %s.", (mysql_error(lpconn)))
 		return 0;
@@ -259,7 +259,7 @@ void ClientService::ParseMsgThread(LPVOID WorkThreadContext)
 	MYSQL conn;
 	char val = 1;
 	mysql_init(&conn);
-	if(!mysql_real_connect(&conn,MYSQL_HOST,MYSQL_USER,MYSQL_PASSWD,MYSQL_DB,0,NULL,CLIENT_FOUND_ROWS))
+	if(!mysql_real_connect(&conn,MYSQL_HOST,MYSQL_USER,MYSQL_PASSWD,MYSQL_DB,4306,NULL,CLIENT_FOUND_ROWS))
 	{
 		MOUTPUT("Can not connect to mysql : %s.", (mysql_error(&conn)))
 	}
